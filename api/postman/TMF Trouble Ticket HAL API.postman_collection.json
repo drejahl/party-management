@@ -1,0 +1,165 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TMF Trouble Ticket HAL API",
+		"_postman_id": "d970d58a-d326-7515-e903-5135a171ea77",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "troubleTicketCreate",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/troubleTicket",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"6\",\"type\":\"Invoice dispute\",\"severity\":\"medium\",\"description\":\"Service charge too high\",\"status\":\"Submitted\",\"statusChangeReason\":\"Initial submission\", \"note\": [{ \"author\": \"Dirk Rejahl\", \"text\":\"Customer called CC\"}]}"
+				},
+				"description": "Create a new customer"
+			},
+			"response": []
+		},
+		{
+			"name": "troubleTicketGet",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/troubleTicket",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"99\",\n    \"status\": \"Submitted\",\n    \"statusChangeReason\": \"Waiting for invoicing expert\"\n}"
+				},
+				"description": "Get all trouble tickets (non HAL)"
+			},
+			"response": []
+		},
+		{
+			"name": "troubleTicketGet HAL - page 1",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/hal/troubleTicket",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"99\",\n    \"status\": \"Submitted\",\n    \"statusChangeReason\": \"Waiting for invoicing expert\"\n}"
+				},
+				"description": "Get all trouble tickets (with HAL) - page 1"
+			},
+			"response": []
+		},
+		{
+			"name": "troubleTicketGet HAL - page 2",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/hal/troubleTicket?page=2",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"99\",\n    \"status\": \"Submitted\",\n    \"statusChangeReason\": \"Waiting for invoicing expert\"\n}"
+				},
+				"description": "Get trouble tickets (with HAL) - page 2"
+			},
+			"response": []
+		},
+		{
+			"name": "troubleTicketFind HAL",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/hal/troubleTicket/3",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"description": ""
+					},
+					{
+						"key": "//Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"99\",\n    \"status\": \"Submitted\",\n    \"statusChangeReason\": \"Waiting for invoicing expert\"\n}"
+				},
+				"description": "Find one trouble tickets (with HAL)"
+			},
+			"response": []
+		},
+		{
+			"name": "troubleTicketReplace",
+			"request": {
+				"url": "http://tmf-api.experimenz.co.uk/DSTroubleTicket/api/troubleTicketManagement/v2/troubleTicket/7",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"7\",\"type\":\"Invoice dispute\",\"severity\":\"medium\",\"description\":\"Dispute due to total service outage\",\"status\":\"Submitted\",\"statusChangeReason\":\"Initial submission\", \"note\": [{ \"author\": \"Dirk Rejahl\", \"text\":\"Customer called CC\"}]}"
+				},
+				"description": "Replace a ticket"
+			},
+			"response": []
+		}
+	]
+}

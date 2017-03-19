@@ -1,0 +1,10 @@
+ mongo:
+   image: mongo
+   command: --nojournal
+ tmf-ttm-api:
+   image: drejahl/tmfapi-trouble-ticket-management
+   links:
+     - mongo
+   ports:
+     - "10010:10010"
+   command: --dbhost mongo
