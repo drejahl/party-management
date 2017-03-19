@@ -187,10 +187,10 @@ module.exports = {
 
       assert.equal(err, null);
 
-      console.log( err )
       doc= generateIndividualDoc( doc, req.url );
 
-      console.log(doc)  
+      console.log( JSON.stringify(doc) )  
+
       res.json( doc );  
       })
     });

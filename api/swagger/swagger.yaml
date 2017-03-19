@@ -476,43 +476,8 @@ definitions:
   IndividualHAL:
     type: object
     properties:
-      '_links':
-        required:
-          - self
-        type: object
-        properties:
-          self:
-            type: object
-            properties:
-              href:
-                type: string
-      '_actions':
-        type: array
-        items:
-          properties:
-            name:
-              type: string
-            title:
-              type: string
-            method:
-              type: string
-            href:
-              type: string
-            type:
-              type: string
-            fields:
-              type: array
-              items:
-                properties:
-                  name:
-                    type: string
-                  type:
-                    type: string
-                  value:
-                    type: string
       id:
-        type: integer
-        format: int64
+        type: string
       href:
         type: string
       gender:
@@ -572,6 +537,40 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ContactMedium'
+      '_links':
+        required:
+          - self
+        type: object
+        properties:
+          self:
+            type: object
+            properties:
+              href:
+                type: string
+      '_actions':
+        type: array
+        items:
+          properties:
+            name:
+              type: string
+            title:
+              type: string
+            method:
+              type: string
+            href:
+              type: string
+            type:
+              type: string
+            fields:
+              type: array
+              items:
+                properties:
+                  name:
+                    type: string
+                  type:
+                    type: string
+                  value:
+                    type: string
   IndividualListHAL:
     type: object
     properties:
@@ -619,12 +618,9 @@ definitions:
       totalrecords:
         type: integer
       '_embedded':
-        type: object
-        properties:
-          item:
-            type: array
-            items:
-              $ref: '#/definitions/IndividualHAL'
+          type: array
+          items:
+            $ref: '#/definitions/IndividualHAL'
       'troubleTicket':
         type: array
         items:
