@@ -413,8 +413,7 @@ definitions:
     type: object
     properties:
       id:
-        type: integer
-        format: int64
+        type: string
       href:
         type: string
       gender:
@@ -740,8 +739,7 @@ definitions:
     type: object
     properties:
       id:
-        type: integer
-        format: int64
+        type: string
       href:
         type: string
       isLegalEntity:

@@ -73,7 +73,6 @@ module.exports = { individualFind, individualCreate, individualGet, individualUp
     collection.findOne( query, 
       mongoUtils.fieldFilter(req.swagger.params.fields.value), function(err, doc) {
       assert.equal(err, null);
-    console.log( doc )
 
       res.json( doc );
       });

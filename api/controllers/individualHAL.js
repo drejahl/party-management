@@ -181,16 +181,16 @@ module.exports = {
 
     const query = { id: individualId.toString() }
 
-    console.log(mongoUtils.fieldFilter(req.swagger.params.fields.value))
     // Find one document
     collection.findOne( query, 
-       function(err, doc) {
+      mongoUtils.fieldFilter(req.swagger.params.fields.value), function(err, doc) {
 
       assert.equal(err, null);
 
       console.log( err )
       doc= generateIndividualDoc( doc, req.url );
-  
+
+      console.log(doc)  
       res.json( doc );  
       })
     });
