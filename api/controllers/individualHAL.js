@@ -189,8 +189,6 @@ module.exports = {
 
       doc= generateIndividualDoc( doc, req.url );
 
-      console.log( JSON.stringify(doc) )  
-
       res.json( doc );  
       })
     });
